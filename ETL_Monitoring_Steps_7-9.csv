@@ -1,0 +1,11 @@
+Improvement opportunity,Feature,Backlog User Story,Impacted Applications,Effort Sizing
+Setup monitoring & alerting based on ETL job execution log,Configure Log Ingestion for Informatica ETL Jobs,"Enable log collection on ETL hosts using OneAgent or FluentBit.
+Identify key log markers such as 'SESSION FAILED', 'SESSION COMPLETED'.
+Route logs to Dynatrace Grail for parsing and analytics.
+Confirm ingestion from pmserver and session logs.",Enrollment & Billing (ID Cards and Collection),M
+Setup monitoring & alerting based on ETL job execution log,Define Log-based Metrics & Dashboards,"Use DQL to extract ETL job failure counts, duration trends, and execution frequency.
+Create custom metrics from logs such as job status and execution time.
+Build visual dashboards to monitor job health and trends.",Enrollment & Billing (ID Cards and Collection),M
+Setup monitoring & alerting based on ETL job execution log,Implement Alerting Based on ETL Job Patterns,"Configure alert rules for job failures (e.g., 'SESSION FAILED') or missing jobs.
+Define SLA breach alerts based on job duration thresholds.
+Notify respective application teams via integrated alert channels (e.g., email, Slack, ServiceNow).",Enrollment & Billing (ID Cards and Collection),M

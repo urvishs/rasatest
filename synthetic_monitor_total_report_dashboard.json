@@ -1,0 +1,112 @@
+{
+  "dashboardMetadata": {
+    "name": "Synthetic Monitor - Total Report Failures",
+    "shared": true,
+    "owner": "user",
+    "dashboardFilter": {
+      "timeframe": "last_7_days"
+    }
+  },
+  "tiles": [
+    {
+      "name": "Total Failures - Total Report",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {"top": 0, "left": 0, "width": 456, "height": 228},
+      "tileFilter": {},
+      "customName": "Total Failures - Total Report",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:synthetic.browser.failure",
+          "aggregation": "count",
+          "splitBy": [],
+          "filtersPerEntityType": {
+            "SYNTHETIC_TEST": [
+              {
+                "id": "SYNTHETIC_TEST",
+                "type": "ENTITY_ID",
+                "value": "TOTAL_REPORT_MONITOR_ID"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Failures by Step - Total Report",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {"top": 0, "left": 456, "width": 456, "height": 228},
+      "tileFilter": {},
+      "customName": "Failures by Step",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:synthetic.browser.event.failure",
+          "aggregation": "count",
+          "splitBy": ["dt.entity.synthetic_test_step"],
+          "filtersPerEntityType": {
+            "SYNTHETIC_TEST": [
+              {
+                "id": "SYNTHETIC_TEST",
+                "type": "ENTITY_ID",
+                "value": "TOTAL_REPORT_MONITOR_ID"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Error Code Frequency - Total Report",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {"top": 228, "left": 0, "width": 456, "height": 228},
+      "tileFilter": {},
+      "customName": "Error Code Frequency",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:synthetic.browser.event.errorCodes",
+          "aggregation": "count",
+          "splitBy": ["errorCode"],
+          "filtersPerEntityType": {
+            "SYNTHETIC_TEST": [
+              {
+                "id": "SYNTHETIC_TEST",
+                "type": "ENTITY_ID",
+                "value": "TOTAL_REPORT_MONITOR_ID"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Execution Trend - Total Report",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {"top": 228, "left": 456, "width": 456, "height": 228},
+      "tileFilter": {},
+      "customName": "Execution Trend",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:synthetic.browser.total",
+          "aggregation": "count",
+          "splitBy": [],
+          "filtersPerEntityType": {
+            "SYNTHETIC_TEST": [
+              {
+                "id": "SYNTHETIC_TEST",
+                "type": "ENTITY_ID",
+                "value": "TOTAL_REPORT_MONITOR_ID"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
